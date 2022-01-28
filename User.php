@@ -14,6 +14,9 @@ class User {
         $this->lastname = $_lastname;
         $this->email = $_email;
     }
+    public function getFullName() {
+        return $this->name . ' ' . $this->lastname;
+    }
     public function addProduct($product) {
         $this->basket[] = $product;
     }

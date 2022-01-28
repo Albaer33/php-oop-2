@@ -2,7 +2,7 @@
 class Product {
     // ATTRIBUTES
     public $name;
-    public $price;
+    private $price;
     private $code;
     public $genre;
 
@@ -14,6 +14,9 @@ class Product {
     public function generateSetCode() {
         $randomNumber = rand(100, 999);
         $this->code = strtoupper($this->name[0] . $this->name[1] . $this->name[2] . $randomNumber);
+    }
+    public function getPrice() {
+        return $this->price;
     }
 }
 ?>
