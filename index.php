@@ -37,7 +37,6 @@ $user3->addProduct($prod3);
 $user3_basket = $user3->getBasket();
 
 // totale da pagare dai carrelli degli user
-var_dump($user1->getTotalPrice());
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +56,7 @@ var_dump($user1->getTotalPrice());
             <h4><?php echo $product->name; ?> - <?php echo $product->getCode(); ?></h4>
             <div>Prezzo: <?php echo $product->getPrice(); ?> Euro</div>
         <?php } ?>
-        <h3>Importo totale(incluso sconto e spedizione): (work in progress)</h3>
+        <h3>Importo totale(incluso sconto e spedizione): <?php $user1->getTotalPrice(); ?></h3>
     </div>
 
     <div class="user-basket">
@@ -66,7 +65,7 @@ var_dump($user1->getTotalPrice());
             <h4><?php echo $product->name; ?> - <?php echo $product->getCode(); ?></h4>
             <div>Prezzo: <?php echo $product->getPrice(); ?> Euro</div>
         <?php } ?>
-        <h3>Importo totale(incluso sconto e spedizione): (work in progress)</h3>
+        <h3>Importo totale(incluso sconto e spedizione): </h3>
     </div>
 
     <div class="user-basket">

@@ -1,4 +1,5 @@
 <?php
+
 class Product {
     // ATTRIBUTES
     public $name;
@@ -22,4 +23,5 @@ class Product {
         return $this->code;
     }
 }
+
 ?>

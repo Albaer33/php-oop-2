@@ -26,10 +26,10 @@ class User {
         return $this->basket;
     }
     public function getTotalPrice() {
-        // TO DO (DOES NOT WORK)
+        // to do (it does not work properly)
         // $total = 0;
         // foreach($basket as $product) {
-        //     $total = $total + $product->getPrice();
+        //     $total += $product->getPrice();
         // }
         // return $total;
     }
