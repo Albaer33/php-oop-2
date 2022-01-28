@@ -2,18 +2,18 @@
 class Product {
     // ATTRIBUTES
     public $name;
-    public $code;
     public $price;
+    private $code;
     public $genre;
 
     // METHODS
     public function __construct($_name, $_price) {
         $this->name = $_name;
-        $this->price = $_price . ' euro';
+        $this->price = $_price . ' Euro';
     }
-    public static function generateSetCode() {
+    public function generateSetCode() {
         $randomNumber = rand(100, 999);
-        $this->code = $this->name[0] . $this->$name[1] . $this->$name[2] . $randomNumber;
+        $this->code = strtoupper($this->name[0] . $this->name[1] . $this->name[2] . $randomNumber);
     }
 }
 ?>
