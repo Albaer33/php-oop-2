@@ -4,11 +4,12 @@ class User {
     public $name;
     public $lastname;
     public $email;
+    public $password;
     // array di oggetti contenente i prodotti che lo specifico user vuole acquistare
     public $basket = [];
 
     // METHODS
-    public function __constructor($_name, $_lastname, $_email) {
+    public function __construct($_name, $_lastname, $_email) {
         $this->name = $_name;
         $this->lastname = $_lastname;
         $this->email = $_email;
