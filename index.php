@@ -25,14 +25,19 @@ $user1->addProduct($prod1);
 $user1->addProduct($prod2);
 $user1->addProduct($prod3);
 $user1_basket = $user1->getBasket();
-var_dump($user1_basket);
+
 $user2->addProduct($prod1);
 $user2->addProduct($prod2);
 $user2->addProduct($prod3);
+$user2_basket = $user2->getBasket();
 
 $user3->addProduct($prod1);
 $user3->addProduct($prod2);
 $user3->addProduct($prod3);
+$user3_basket = $user3->getBasket();
+
+// totale da pagare dai carrelli degli user
+var_dump($user1->getTotalPrice());
 ?>
 
 <!DOCTYPE html>
@@ -45,12 +50,32 @@ $user3->addProduct($prod3);
 </head>
 <body>
     <h1>SHOP</h1>
-    <div>
+
+    <div class="user-basket">
         <h2><?php echo $user1->getFullName(); ?></h2>
         <?php foreach($user1_basket as $product) {?>
-            <h4><?php echo $product->name; ?> - <?php echo $product->code; ?></h4>
-            <div>Prezzo: <?php $product->getPrice(); ?></div>
+            <h4><?php echo $product->name; ?> - <?php echo $product->getCode(); ?></h4>
+            <div>Prezzo: <?php echo $product->getPrice(); ?> Euro</div>
         <?php } ?>
+        <h3>Importo totale(incluso sconto e spedizione): (work in progress)</h3>
+    </div>
+
+    <div class="user-basket">
+        <h2><?php echo $user2->getFullName(); ?></h2>
+        <?php foreach($user2_basket as $product) {?>
+            <h4><?php echo $product->name; ?> - <?php echo $product->getCode(); ?></h4>
+            <div>Prezzo: <?php echo $product->getPrice(); ?> Euro</div>
+        <?php } ?>
+        <h3>Importo totale(incluso sconto e spedizione): (work in progress)</h3>
+    </div>
+
+    <div class="user-basket">
+        <h2><?php echo $user3->getFullName(); ?></h2>
+        <?php foreach($user3_basket as $product) {?>
+            <h4><?php echo $product->name; ?> - <?php echo $product->getCode(); ?></h4>
+            <div>Prezzo: <?php echo $product->getPrice(); ?> Euro</div>
+        <?php } ?>
+        <h3>Importo totale(incluso sconto e spedizione): (work in progress)</h3>
     </div>
 </body>
 </html>

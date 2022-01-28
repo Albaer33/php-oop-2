@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/Product.php';
+
 class User {
     // ATTRIBUTES
     public $name;
@@ -22,6 +24,14 @@ class User {
     }
     public function getBasket() {
         return $this->basket;
+    }
+    public function getTotalPrice() {
+        // TO DO (DOES NOT WORK)
+        // $total = 0;
+        // foreach($basket as $product) {
+        //     $total = $total + $product->getPrice();
+        // }
+        // return $total;
     }
 }
 ?>
