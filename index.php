@@ -4,15 +4,34 @@ require_once __DIR__ . '/Product.php';
 require_once __DIR__ . '/StandardUser.php';
 require_once __DIR__ . '/PremiumUser.php';
 require_once __DIR__ . '/GoldPremiumUser.php';
+require_once __DIR__ . '/UserCredentials.php';
 
 // creo classi prodotto, genero e setto i relativi codici
-$prod1 = new Product('Samsung S21', 850);
+try {
+    $prod1 = new Product('Samsung S21', 'kamehamehaaa');
+} catch (Exception $e) {
+    error_log($e);
+    echo('<div style="border: 3px solid black; color: red; font-size: 34px;">Manutenzione del sito in corso. il server tornerà attivo più tardi</div>');
+    die();
+}
 $prod1->generateSetCode();
 
-$prod2 = new Product('Manubrio moto', 225);
+try {
+    $prod2 = new Product('Manubrio moto', 225);
+} catch (Exception $e) {
+    error_log($e);
+    echo('<div style="border: 3px solid black; color: red; font-size: 34px;">Manutenzione del sito in corso. il server tornerà attivo più tardi</div>');
+    die();
+}
 $prod2->generateSetCode();
 
-$prod3 = new Product('Asus PC da gaming', 1600);
+try {
+    $prod3 = new Product('Asus PC da gaming', 1600);
+} catch (Exception $e) {
+    error_log($e);
+    echo('<div style="border: 3px solid black; color: red; font-size: 34px;">Manutenzione del sito in corso. il server tornerà attivo più tardi</div>');
+    die();
+}
 $prod3->generateSetCode();
 
 // creo 3 classi utenti, 1 standard, 1 premium, 1 gold premium

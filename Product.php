@@ -1,5 +1,4 @@
 <?php
-
 class Product {
     // ATTRIBUTES
     public $name;
@@ -10,7 +9,12 @@ class Product {
     // METHODS
     public function __construct($_name, $_price) {
         $this->name = $_name;
-        $this->price = $_price;
+        if(is_int($_price)) {
+            $this->price = $_price;
+        }
+        else {
+            throw new Exception('il prezzo deve essere un numero');
+        }
     }
     public function generateSetCode() {
         $randomNumber = rand(100, 999);
@@ -23,5 +27,4 @@ class Product {
         return $this->code;
     }
 }
-
 ?>
