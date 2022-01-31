@@ -1,12 +1,10 @@
 <?php
-require_once __DIR__ . '/Product.php';
 
 class User {
     // ATTRIBUTES
     public $name;
     public $lastname;
     public $email;
-    public $password;
     // array di oggetti contenente i prodotti che lo specifico user vuole acquistare
     public $basket = [];
 

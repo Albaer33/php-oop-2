@@ -1,7 +1,9 @@
 <?php
 require_once __DIR__ . '/User.php';
+require_once __DIR__ . '/UserCredentials.php';
 
 class GoldPremiumUser extends User {
+    use UserCredentials;
     private $shipping_price = 0;
     private $discount = 0.2;
     

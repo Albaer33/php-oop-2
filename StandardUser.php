@@ -1,7 +1,9 @@
 <?php
 require_once __DIR__ . '/User.php';
+require_once __DIR__ . '/UserCredentials.php';
 
 class StandardUser extends User {
+    use UserCredentials;
     private $shipping_price = 10;
 
     public function getShippingPrice() {
