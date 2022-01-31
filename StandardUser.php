@@ -7,5 +7,12 @@ class StandardUser extends User {
     public function getShippingPrice() {
         return $this->shipping_price;
     }
+    public function getTotalPrice() {
+        $total = 0;
+        foreach($this->basket as $product) {
+            $total += $product->getPrice();
+        }
+        return $total + $this->shipping_price;
+    }
 }
 ?>
